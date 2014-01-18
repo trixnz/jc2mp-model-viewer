@@ -29,14 +29,11 @@ function ModelViewer:__init()	; EventBase.__init(self)
 	self.model_text:SetAlignment(GwenPosition.CenterV)
 
 	for k, v in ipairs(models) do
-		-- .ee files are currently unsupported
-		if string.sub(v.name, string.len(v.name) - 2) ~= '.ee' and string.sub(v.name, string.len(v.name) - 3) ~= '.eez' then
-			node = self.treeview:AddNode(v.name)
+		node = self.treeview:AddNode(v.name)
 
-			for k2, v2 in ipairs(v.files) do
-				child_node = node:AddNode(v2.model)
-				child_node:Subscribe("Select", self, self.ModelSelected)
-			end
+		for k2, v2 in ipairs(v.files) do
+			child_node = node:AddNode(v2.model)
+			child_node:Subscribe("Select", self, self.ModelSelected)
 		end
 	end
 
