@@ -1,5 +1,5 @@
 -- This may seem a little crazy, but its here for two reasons:
--- Client's can't open files
+-- Clients cannot open files
 -- Lua scripts are compressed when sent to the client, so this should compress down extremely well
 
 models = {
